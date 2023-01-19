@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-color: #aaaaaa;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+}
+
+table {
+    display: flex;
+    flex: 0;
+}
+
+tr {
+    display: flex;
+    height: 80px;
+}
+
+td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    border: solid white;
+    background-color: #CCCCCC;
+    transition: 0.4s;
+}
+
+td:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0px 3px 3px gold;
+    background-color: #DDDDDD;
+}
+
+.mark {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+#reset-button {
+    color: black;
+    background-color: white;
+    width: 240px;
+    height: 40px;
+    transition: 0.5s;
+}
+#reset-button:hover {
+    background-color: lightskyblue;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.player-1-scoreboard, .player-2-scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    padding: 20px;
+}
+
