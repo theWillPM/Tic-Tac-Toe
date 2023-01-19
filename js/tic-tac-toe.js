@@ -14,7 +14,7 @@ let playerOneScoreCount = 0;
 let playerTwoScoreCount = 0;
 
 //document elements queries
-let playerMessage = document.getElementById('current-player');
+let playerMessage = document.getElementById('player-message');
 let ticTacToe = document.getElementById('tic-tac-toe');
 let fields = document.querySelectorAll('.field');
 let resetButton = document.getElementById('reset-button');
@@ -83,7 +83,7 @@ function draw(fieldNumber) {
         }
     }
     else if (gameState == "end") {
-        resetButton.removeAttribute("hidden");
+        enableResetButton();
     }
 }
 
@@ -93,7 +93,7 @@ function checkIfEnd(x, y, player) {
     checkDiagonals(player);
     if(playCount == 9 && gameState != "end") {
         playerMessage.innerHTML = "Game over. No winner.";
-        resetButton.removeAttribute("hidden");
+        enableResetButton();
         return;
     };
 }
@@ -161,17 +161,18 @@ function reset() {
     gameState = "continue";
     resetColors(); 
     refreshFieldMarks();
-    resetButton.setAttribute("hidden", "true");
+    resetButton.setAttribute("disabled", "true");
+    resetButton.style.backgroundColor = "#DDDDDD";
     playCount = 0;
 }
 
 function handleGameOver() {
     gameState = "end";
-    resetButton.removeAttribute("hidden");
+    enableResetButton();
     if (currentPlayer == "O") playerOneScoreCount++;
     else if (currentPlayer == "X") playerTwoScoreCount++;
-    playerOneScoreHTML.innerHTML = playerOneScoreCount;
-    playertwoScoreHTML.innerHTML = playerTwoScoreCount;
+    playerOneScoreHTML.innerHTML = "Score: " + playerOneScoreCount;
+    playertwoScoreHTML.innerHTML = "Score: " + playerTwoScoreCount;
 }
 
 function paintWinnerRow(x) {
@@ -210,3 +211,7 @@ function resetScore() {
     playertwoScoreHTML.innerHTML = playerTwoScoreCount;
 }
 
+function enableResetButton() {
+    resetButton.removeAttribute("disabled");
+    resetButton.style.backgroundColor="#b9e8ff";
+}
