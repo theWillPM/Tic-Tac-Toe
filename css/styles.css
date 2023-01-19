@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #aaaaaa;
+    background-color: #dddddd;
     color: black;
 }
 
@@ -59,11 +59,39 @@ td:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+}
+
+.vertical-button {
+    display: flex;
+    width: 30px;
+    height: 100%;
+}
+
+#reset-score-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 150px;
+    background-color: black;
+    color: white;
+    z-index: 1;
+}
+
+#reset-score-button span {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-weight: 700;
+    line-height: 0.8rem;
+}
+#reset-score-button:hover {
+    background-color: #111111;
+    box-shadow: 0px 0px 2px 2px gold;
 }
 
 .player-1-scoreboard, .player-2-scoreboard {
     display: flex;
+    background-color: #CCCCCC;
     flex-direction: column;
     justify-content: center;
     align-items: center;

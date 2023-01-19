@@ -106,7 +106,7 @@ function checkRow(x, player) {
         }
     });
     if (score == 3) {
-        playerMessage.innerHTML = (player + ' WON!');
+        playerMessage.innerHTML = (' Winner:  ' + player);
         console.log("Winner row: " + (x+1));
         paintWinnerRow(x);
         handleGameOver();
@@ -121,7 +121,7 @@ function checkColumn(y, player) {
         }
     });
     if (score == 3) {
-        playerMessage.innerHTML = (player + ' WON!');
+        playerMessage.innerHTML = (' Winner:  ' + player);
         console.log("Winner column: " + (y+1));
         paintWinnerColumn(y);
         handleGameOver();
@@ -145,7 +145,7 @@ function checkDiagonals(player) {
         }
     }
     if (score == 3) {
-        playerMessage.innerHTML = (player + ' WON!');
+        playerMessage.innerHTML = (' Winner:  ' + player);
         if (winnerDiagonal == 1) console.log("Winner diagonal: /");
         else if (winnerDiagonal == 2) console.log("Winner diagonal: \\");
         paintWinnerDiagonal(winnerDiagonal);
@@ -201,5 +201,12 @@ function resetColors() {
     fields.forEach(element => {
         element.style.backgroundColor = "#cccccc";
     });
+}
+
+function resetScore() {
+    playerOneScoreCount = 0;
+    playerTwoScoreCount = 0;
+    playerOneScoreHTML.innerHTML = playerOneScoreCount;
+    playertwoScoreHTML.innerHTML = playerTwoScoreCount;
 }
 
