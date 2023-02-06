@@ -256,7 +256,11 @@ footer {
         max-height: 60px;
         width: 15vw;
         max-width: 60px;
-
         z-index: 3;
     }
+    #reset-score-button {
+        top: 10px;
+        left: 10px;
+    }
+    
 }
