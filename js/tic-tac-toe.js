@@ -58,6 +58,7 @@ console.log(fields);
 function draw(fieldNumber) {
     if (gameState != "end") {
         playCount++;
+        enableResetButton();
 
         let x = Math.floor((fieldNumber-1)/3);
         let y = (fieldNumber-1)%3;
@@ -152,6 +153,7 @@ function checkDiagonals(player) {
         handleGameOver();
     }
 }
+
 function reset() {
     fields.forEach(element => {
         element.innerHTML = "";        
@@ -162,8 +164,10 @@ function reset() {
     resetColors(); 
     refreshFieldMarks();
     resetButton.setAttribute("disabled", "true");
-    resetButton.style.backgroundColor = "#DDDDDD";
+    resetButton.style.backgroundColor = "#DDDDDD  :hover";
     playCount = 0;
+    resetButton.style.scale=1.0;
+
 }
 
 function handleGameOver() {
@@ -171,8 +175,8 @@ function handleGameOver() {
     enableResetButton();
     if (currentPlayer == "O") playerOneScoreCount++;
     else if (currentPlayer == "X") playerTwoScoreCount++;
-    playerOneScoreHTML.innerHTML = "Score: " + playerOneScoreCount;
-    playertwoScoreHTML.innerHTML = "Score: " + playerTwoScoreCount;
+    playerOneScoreHTML.innerHTML =  playerOneScoreCount;
+    playertwoScoreHTML.innerHTML =  playerTwoScoreCount;
 }
 
 function paintWinnerRow(x) {
@@ -213,5 +217,7 @@ function resetScore() {
 
 function enableResetButton() {
     resetButton.removeAttribute("disabled");
-    resetButton.style.backgroundColor="#b9e8ff";
+    resetButton.style.backgroundColor="white :hover";
+    resetButton.style.scale=1.2;
 }
+

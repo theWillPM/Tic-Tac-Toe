@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Learning about HTML lists">
-    <meta name="author" content="Arta Farahmand">
+    <meta name="author" content="Willian Pereira Munhoz">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0">
     <title>Module 2 | JavaScript Object Activity | Tic-Tac-Toe</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -21,42 +21,49 @@
     <main>
 
         <h2 id="player-message">Player 1's turn! (O)</h2>
-        <button type="button" name="reset-button" id="reset-button" onclick="reset();" disabled>RESET BOARD</button>
-        <table id="tic-tac-toe">
-            <tr>
-                <td class="field row-1 column-1" id="1" onclick="draw(1);"></td>
-                <td class="field row-1 column-2" id="2" onclick="draw(2);"></td>
-                <td class="field row-1 column-3" id="3" onclick="draw(3);"></td>
-            </tr>
-            <tr>
-                <td class="field row-2 column-1" id="4" onclick="draw(4);"></td>
-                <td class="field row-2 column-2" id="5" onclick="draw(5);"></td>
-                <td class="field row-2 column-3" id="6" onclick="draw(6);"></td>
-            </tr>
-            <tr>
-                <td class="field row-3 column-1" id="7" onclick="draw(7);"></td>
-                <td class="field row-3 column-2" id="8" onclick="draw(8);"></td>
-                <td class="field row-3 column-1" id="9" onclick="draw(9);"></td>
-            </tr>
-        </table>
-
-        <div class="scoreboard">
+        <div class ="main-content">
+            
             <div class="player-1-scoreboard">
                 <p>Player 1</p>
                 <img src="./img/O.png" class="mark-icon">
-                <p id="player-1-score">0</p>
+                <div class="points-container">
+                    Score
+                    <p class="player-points" id="player-1-score">0</p>
+                </div>   
             </div>
-            <div class="vertical-button">
-                <button type="button" name="reset-score-button" id="reset-score-button" onclick="resetScore();" >
-                    <span>RESET</span>
+            <div class="main-content-center">   
+                <table id="tic-tac-toe">
+                    <tr>
+                        <td class="field row-1 column-1" id="1" onclick="draw(1);"></td>
+                        <td class="field row-1 column-2" id="2" onclick="draw(2);"></td>
+                        <td class="field row-1 column-3" id="3" onclick="draw(3);"></td>
+                    </tr>
+                    <tr>
+                        <td class="field row-2 column-1" id="4" onclick="draw(4);"></td>
+                        <td class="field row-2 column-2" id="5" onclick="draw(5);"></td>
+                        <td class="field row-2 column-3" id="6" onclick="draw(6);"></td>
+                    </tr>
+                    <tr>
+                        <td class="field row-3 column-1" id="7" onclick="draw(7);"></td>
+                        <td class="field row-3 column-2" id="8" onclick="draw(8);"></td>
+                        <td class="field row-3 column-1" id="9" onclick="draw(9);"></td>
+                    </tr>
+                </table>
+                <button type="button" name="reset-button" id="reset-button" onclick="reset();" disabled>RESET BOARD</button>
+                <button type="button" name="reset-score-button" id="reset-score-button" onclick="resetScore();">RESET SCORE</button>
                 </button>
             </div>
+            
             <div class="player-2-scoreboard">
                 <p>Player 2</p>
                 <img src="./img/X.png" class="mark-icon">
-                <p id="player-2-score">0</p>
+                <div class="points-container">
+                    Score
+                    <p class="player-points" id="player-2-score">0</p>
+                </div>   
             </div>
         </div>
+
         
         <footer>
             <!-- Link to my GitHub -->
